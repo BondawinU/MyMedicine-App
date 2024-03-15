@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8" />
+      <meta name="format-detection" content="telephone=no" />
+      <meta name="msapplication-tap-highlight" content="no" />
+      <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+      <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" />
+
+      <script type="text/javascript" src="cordova.js"></script>
+      <script type="text/javascript" src="js/index.js"></script>
+      <script type="text/javascript">
+          app.initialize();
+      </script>
+      <link rel="stylesheet" type="text/css" href="css/index.css" />
+      <title>Pillenreminder App</title>
+  </head>
+  <body>
+    <!--Fester Header mit dem Hilfe Button
+    Auf Klick Auswahl zwischen Video oder Text
+    Keine Videos hinterlegt
+    Informationstext könnte als Popup Fenster auftreten-->
+        <div class="header" id="myHeader"> <!--Allgemeiner Header-->
+      <button class="hilfe" onclick="openHelp();closeHelp()" id="hilfeBtn">Ich brauche Hilfe!</button>
+      <div class="helpOptions" id="myHelp"><!--Header nach Anklicken-->
+        <p style="font-size:24px; ">Was für eine Hilfe möchten Sie?</p>
+        <button type="button" class="help">Video-Tutorial</button>
+        <button type="button" class="help">Weitere Informationen</button>
+      </div>
+    </div>
+        <!--Allgemeiner Baustein der App-->
+        <div class="app" id="app">
+          <h1>Kontaktperson</h1>
+          <p>Willkommen zur mobilen Applikation für Ihren Pillenreminder.</p>
+          <div>
+              <p>Bitte geben Sie eine Kontaktperson/Vertrauensperson an!</p>
+              <form>
+                <label for="nameVP">Name: </label>
+                <input type="text" id="nameVP" name="Kontaktperson">
+                <label for="mailVP">E-Mail Adresse: </label>
+                <input type="email" id="mailVP" name="E-Mail Adresse">
+                <input type="button" name="submit" onclick=bestaetigen() value="Speichern und Weiter">
+                <!--Die Daten werden bei Klicken des Buttons nochmal angezeigt um dann bestätigt zu werden, oder sie können nochmal geändert werden
+                Daten sollten in localStorage gespeichert werden, um sie später wieder aufzurufen, aber Probleme damit, da es mehrere Felder sind und über verschiedene Seiten hinweg-->
+              </form>
+          </div>
+      </div>
+
+  </body>
+</html>

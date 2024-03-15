@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8" />
+      <meta name="format-detection" content="telephone=no" />
+      <meta name="msapplication-tap-highlight" content="no" />
+      <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+      <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" />
+      <link rel="stylesheet" type="text/css" href="css/index.css" />
+      <script type="text/javascript" src="cordova.js"></script>
+      <script type="text/javascript" src="js/index.js"></script>
+      <script type="text/javascript">
+          app.initialize();
+      </script>
+      <title>Pillenreminder App</title>
+  </head>
+  <body>
+    <!--Fester Header mit dem Hilfe Button
+    Auf Klick Auswahl zwischen Video oder Text
+    Keine Videos hinterlegt
+    Informationstext könnte als Popup Fenster auftreten-->
+      <div class="header" id="myHeader"> <!--Allgemeiner Header-->
+      <button class="hilfe" onclick="openHelp();closeHelp()" id="hilfeBtn">Ich brauche Hilfe!</button>
+      <div class="helpOptions" id="myHelp"><!--Header nach Anklicken-->
+        <p style="font-size:24px; ">Was für eine Hilfe möchten Sie?</p>
+        <button type="button" class="help">Video-Tutorial</button>
+        <button type="button" class="help">Weitere Informationen</button>
+      </div>
+    </div>
+    <!--Sidebar Menü-->
+        <div id="mySidebar" class="sidebar">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <a href="main.html">Startseite</a>
+          <a href="neu.html">Medikation Hinzufügen</a>
+          <a href="view.html">Übersicht</a>
+          <a href="future.html">Zukünfige Medikationen</a>
+          <a href="archiv.html">Archiv</a>
+          <a href=#>Einstellungen</a>
+        </div>
+        <div class="app" id="app">
+          <button class="openbtn" onclick="openNav()">&#9776; Menü</button><!-- Auslösen des Menüs-->
+          <h1>Einstellungen</h1>
+          <p>Hier können Sie die Daten Ihrer Vertrauensperson, sowie Ihre eigenen persönlichen Daten, ändern.</p>
+          <label for="name">Eigener Name</label>
+          <input type="text" id="name" name="name">
+          <label for="nameVP">Name Vertrauensperson</label>
+          <input type="text" id="nameVP" name="Kontaktperson">
+          <label for="mailVP">E-Mail Vertrauensperson</label>
+          <input type="email" id="mailVP" name="E-Mail Adresse">
+
+          <input type="button" name="laden" value="Daten laden" onclick=load()>
+          <input type="button" name="aendern" value="Daten ändern" onclick=saveChange()>
+
+          <script>
+            function load() {
+              //hier sollen die Daten von der Kontaktperson-Seite geladen werden, sodass sie auf dieser Seite angezeigt werden
+              //dabei müssen die Inhalte mehrerer Input Boxen gespeichert werden, also ein array erstellt werden
+              //diese Funktion könnte auch direkt beim laden der Seite ausgeführt werden
+            }
+            function saveChange() {
+              //hier sollen die neuen Daten die alten überschreiben
+            }
+          </script>
+
+          </div>
+      </div>
+  </body>
+</html>
